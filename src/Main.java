@@ -59,8 +59,9 @@ public class Main {
 
     private static Nomina leerNominaDesdeArchivo() {
         try {
-
-            Nomina nominaIngenieria = nominaIngenieria = new Nomina(true);
+            /*Aunque el constructor de Nomina recibe un booleano, lo he hecho así para poder escribir primero el
+            * archivo. Esto está dentro de un try catch porque la lectura del archivo podría fallar*/
+            Nomina nominaIngenieria = new Nomina(true);
             return nominaIngenieria;
         } catch (FileNotFoundException | RuntimeException e) {
             if (e instanceof FileNotFoundException) {

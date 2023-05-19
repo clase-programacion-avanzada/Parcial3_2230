@@ -3,7 +3,6 @@ import java.util.Random;
 
 public abstract class Profesor implements Serializable {
     private static final Random RANDOM = new Random();
-
     private static final int MAXIMO_ALEATORIO = 100;
     private String nombre;
     private String correo;

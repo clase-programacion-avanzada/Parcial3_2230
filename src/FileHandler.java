@@ -1,13 +1,12 @@
 import java.io.*;
-import java.nio.file.Files;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class FileHandler {
 
 
 
-    public static void escribirListaDeProfesoresArchivoBinario(String nombreArchivo,List<Profesor> profesores) throws IOException {
+    public static void escribirListaDeProfesoresArchivoBinario(String nombreArchivo,List<Profesor> profesores)
+            throws IOException {
         File file = new File(nombreArchivo);
 
         try (FileOutputStream fos = new FileOutputStream(file);
@@ -20,11 +19,10 @@ public class FileHandler {
 
     }
 
-    public static void cargarProfesores(String rutaPersistencia, List<Profesor> profesores) throws RuntimeException,
+    public static void cargarProfesores(String rutaPersistencia,
+                                        List<Profesor> profesores) throws RuntimeException,
             IOException, ClassNotFoundException {
         File file = new File(rutaPersistencia);
-
-
         try (FileInputStream fis = new FileInputStream(file);
              ObjectInputStream ois = new ObjectInputStream(fis)) {
 
@@ -36,11 +34,11 @@ public class FileHandler {
         }catch (EOFException e) {
 
         }
-
-
     }
 
-    public static void exportarProfesores(String rutaArchivo, List<String> listaAExportar) throws IOException {
+    public static void exportarProfesores(String rutaArchivo,
+                                          List<String> listaAExportar)
+            throws IOException {
 
         FileWriter myWriter = new FileWriter(rutaArchivo);
         myWriter.write("========== Profesores en nomina ==========");

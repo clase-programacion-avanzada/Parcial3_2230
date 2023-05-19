@@ -75,18 +75,22 @@ public class Nomina {
     public void ordenarProfesoresPorNombre() {
 
         //One way
-        Collections.sort(this.profesores, (p1, p2 ) ->  p1.getNombre().compareTo(p2.getNombre()));
+        Collections.sort(this.profesores,
+                (p1, p2) ->  p1.getNombre().compareTo(p2.getNombre()));
         //Otra forma
         Collections.sort(this.profesores, Comparator.comparing(Profesor::getNombre));
 
+    }
 
-
+    public int compare (Profesor p1, Profesor p2) {
+        return p1.getNombre().compareTo(p2.getNombre());
     }
 
     public void ordenarProfesoresPorNumeroDeEjemplo() {
 
         //One way
-        Collections.sort(this.profesores, (p1, p2 ) ->  p1.getNumeroDeEjemploParaOrdenarPorNumero() - p2.getNumeroDeEjemploParaOrdenarPorNumero());
+        Collections.sort(this.profesores,
+                (p1, p2 ) ->  p1.getNumeroDeEjemploParaOrdenarPorNumero() - p2.getNumeroDeEjemploParaOrdenarPorNumero());
         //Otra forma
         Collections.sort(this.profesores, Comparator.comparingInt(Profesor::getNumeroDeEjemploParaOrdenarPorNumero));
 
